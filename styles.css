@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+
+    background: url(https://picsum.photos/1600/900) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#caixa {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+
+    color: #8A4D9D;
+    font-size: 50px;
+    margin-bottom: 20px;
+
+}
+
+.button {
+
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: #4A90E2; 
+    transition: background-color 0.3s ease;
+
+}
+
+.button:hover {
+
+    background-color: #357ABD; 
+
+}
+
+#voce, #maquina {
+
+    margin-top: 20px;
+    font-size: 30px;
+    color: #6C4F87;
+
+}
+
+#maquina {
+
+    font-size: 23px;
+    color: #D1D8E0; 
+    
+}
+
+span {
+
+    color: red;
+
+}
