@@ -1,6 +1,6 @@
 <h1 align="center">Jokenpô</h1>
 
-<img src="https://github.com/Andre-DevMarques/We-Care-Pets-Projeto/blob/main/img/Site-pc.PNG?raw=true">
+<img src="https://github.com/Andre-DevMarques/Jokenp--Projeto/blob/main/img/image.png?raw=true">
 <h4>Tecnologias usadas</h4>
   
 <ul>
