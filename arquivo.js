@@ -1,46 +1,51 @@
-let pedra = document.querySelector("#pedra");
-let papel = document.querySelector("#papel");
 let resultado = document.querySelector("#resultado");
-let tesoura = document.querySelector("#tesoura");
-let minhaPontuacao = document.querySelector("#voce span");
-let maquinaPontuacao = document.querySelector("#maquina span"); 
-
+let pontuaçãoJogador = document.querySelector("#voce");
+let pontuaçãoMaquina = document.querySelector("#maquina");
 
 let humano = (suaEscolha) => {
-    jogada(suaEscolha, maquina());
-};
 
+    jogo(suaEscolha, maquina());
+
+}
 
 let maquina = () => {
-    let escolhasMaquina = ["papel", "pedra", "tesoura"];
-    let numeroAleatorio = Math.floor(Math.random() * 3);
-    return escolhasMaquina[numeroAleatorio];
-};
 
-let jogada = (humanoEscolha, maquinaEscolha) => {
+    let maquinaEscolhas = ["pedra", "papel", "tesoura"];
+    let numerosAleatorios = Math.floor(Math.random() * 3);
 
-    if (humanoEscolha === maquinaEscolha) {
+    return maquinaEscolhas[numerosAleatorios];
 
-        resultado.innerHTML = `Empatou! Você escolheu ${humanoEscolha} e a máquina também escolheu ${maquinaEscolha}.`;
-   
+}
+
+let MeusPontos = 0
+let PontosMaquina = 0
+
+
+let jogo = (escolhaJogador, escolhaMaquina) => {
+
+
+    if (escolhaJogador === escolhaMaquina) {
+
+        resultado.innerHTML = "Parece que Empatou hahahaha";
+
     } else if (
 
-        (humanoEscolha === "pedra" && maquinaEscolha === "tesoura") ||
-        (humanoEscolha === "tesoura" && maquinaEscolha === "papel") ||
-        (humanoEscolha === "papel" && maquinaEscolha === "pedra")
+        (escolhaJogador === "pedra" && escolhaMaquina === "tesoura") ||
+        (escolhaJogador === "tesoura" && escolhaMaquina === "papel") ||
+        (escolhaJogador === "papel" && escolhaMaquina === "pedra")
 
     ) {
-        resultado.innerHTML = `Você ganhou! Você escolheu ${humanoEscolha} e a máquina escolheu ${maquinaEscolha}.`;
 
-       
-        let pontuacaoAtual = parseInt(minhaPontuacao.innerHTML);
-        minhaPontuacao.innerHTML = pontuacaoAtual + 1;
+        MeusPontos++
+        pontuaçãoJogador.innerHTML = `Minha Pontuação: ${MeusPontos}`
+        resultado.innerHTML = `Você escolheu ${escolhaJogador} e a Maquina escolheu ${escolhaMaquina}`
 
     } else {
-        resultado.innerHTML = `Máquina ganhou! Você escolheu ${humanoEscolha} e a máquina escolheu ${maquinaEscolha}.`;
 
-       
-        let pontuacaoAtual = parseInt(maquinaPontuacao.innerHTML);
-        maquinaPontuacao.innerHTML = pontuacaoAtual + 1;
+        PontosMaquina++
+        pontuaçãoMaquina.innerHTML = `Pontuação Da Maquina ${PontosMaquina}`
+        resultado.innerHTML = `Você escolheu ${escolhaJogador} e a Maquina escolheu ${escolhaMaquina}`
+
     }
-};
+    
+}
